@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <script>
+        function getQueryParams() {
+            const params = {};
+            const queryString = window.location.search.substring(1);
+            const queryArray = queryString.split('&');
+            for (const param of queryArray) {
+                const [key, value] = param.split('=');
+                params[key] = decodeURIComponent(value);
+            }
+            return params;
+        }
+
+        window.onload = function() {
+            const params = getQueryParams();
+            if (params.error) {
+                const resp = document.getElementById("erro");
+                const message = document.createElement("span");
+                if (params.error === "error600") {
+                    message.textContent = "Informação de login está incorreto.";
+                } 
+                message.style.color = "red";
+                resp.appendChild(message);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Página login do admin</h1>
+    <form action="admLogin.php" method="post">
+        <input type="email" name="email" placeholder="email" required><br>
+        <input type="password" name="senha" placeholder="senha" required><br>
+        <input type="submit" value="enviar">
+    </form>
+    <div id="erro"></div>
+</body>
+</html>

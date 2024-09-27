@@ -1,0 +1,239 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  background-image: url(images/back.png);
+  background-size: cover; 
+  background-position: center; 
+  background-attachment: fixed;
+}
+.footer-text {
+  text-align: center;
+  background-color: black;
+  color: white;
+  padding: 15px;
+  width: 100%;
+  margin: 0;
+  position: relative;
+  bottom: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000000;
+  padding: 5px 10px; 
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo {
+  flex: 1;
+}
+
+.logo img {
+  height: 25px; 
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+  flex: 2;
+  justify-content: center;
+}
+
+.nav-buttons a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px; 
+  border-radius: 5px;
+  transition: color 0.3s, border-bottom 0.3s;
+  position: relative;
+}
+
+.nav-buttons a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #bb0000;
+  transition: width 0.3s;
+}
+
+.nav-buttons a:hover::after {
+  width: 100%;
+}
+
+.nav-buttons a:hover {
+  color: #ffffff;
+}
+
+.auth-buttons {
+  display: flex; 
+  gap: 10px;
+}
+
+.auth-buttons a {
+  --color: #ffffff;
+  --hover-color: #bb0000;
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.4em;
+  line-height: 2.3em;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 10px; 
+  font-size: 15px; 
+  z-index: 1;
+  color: var(--color);
+  border: 2px solid var(--color);
+  border-radius: 6px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+}
+
+.auth-buttons a::before {
+  position: absolute;
+  content: "";
+  background: var(--hover-color);
+  width: 150px;
+  height: 200px;
+  z-index: -1;
+  border-radius: 50%;
+  top: 100%;
+  left: 100%;
+  transition: 0.3s all;
+}
+
+.auth-buttons a:hover {
+  color: rgb(255, 255, 255);
+}
+
+.auth-buttons a:hover::before {
+  top: -30px;
+  left: -30px;
+}
+main {
+  margin-top: 60px;
+  padding: 20px;
+}
+
+.jogos-ao-vivo, .placares-lideres, .sobre-nos {
+  margin-bottom: 40px;
+}
+
+.jogos-ao-vivo h2, .placares-lideres h2, .sobre-nos h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.live-games-container, .ranking-container, .about-container {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.live-game {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.live-game img {
+  width: 100px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.ranking-container {
+  list-style: none;
+  padding: 0;
+}
+
+.ranking-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.ranking-position {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 20px;
+  color: #00367e;
+}
+
+.ranking-info {
+  flex: 1;
+}
+
+.creator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.creator img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.creator-info {
+  flex: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+.vote-link {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: #28a745;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.vote-link:hover {
+  background-color: #218838;
+}
+
+.result-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.result-link:hover {
+  background-color: #0056b3;
+}
